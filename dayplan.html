@@ -1,0 +1,42 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Day Plan</title>
+  <meta name="description" content="Day plan">
+  <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<div class="window">
+    <div id="tablebox">
+    </div>
+    <div id="formbox">
+        <div>
+            <h1>FORM</h1>
+        </div>
+        <div>
+            DAYS: <input type="number" min="1" max="7" name="days" id="InDays">
+        </div>
+        <div>
+            TASKS/DAY: <input type="number" min="1" max="5" name="tasks" id="InTasks">
+        </div>
+        <div>
+            <input type="button" id="InButt" value="CREATE" onclick="TabCreate()">
+        </div>
+    </div>
+    <div id="cardshelf">
+        <table id="Bstartbucket1" class="container" ondrag="leave(event)">
+            <tr>
+                    <td id="startbucket1" class="startbucket" ondragover="allowDrop(event)" ondrop="drop(event)">.</td>
+                    <td id="startbucket2" class="startbucket" ondragover="allowDrop(event)" ondrop="drop(event)">.</td>
+                    <td id="startbucket3" class="startbucket" ondragover="allowDrop(event)" ondrop="drop(event)">.</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+<script src="scripts.js"></script>
+</html>

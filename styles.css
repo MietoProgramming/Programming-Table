@@ -1,0 +1,195 @@
+body
+{
+    margin:0px;
+}
+
+table
+{
+    border-collapse:collapse;
+}
+/*
+Styles to index.html
+*/
+
+/*.container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  font-family: 'Titillium Web', sans-serif;
+  border: 5px solid #00ff00;
+}*/
+.container
+{
+    margin-right:0px;
+    margin-left:0px;
+}
+
+.droppable {
+  width: 15rem;
+  height: 10rem;
+  max-height: 15rem;
+  border: 1px dotted #7f8082;
+  border-radius: 3px;
+  padding: 0.5rem;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  background: #e2e4e6;
+  width: 100%;
+  height: 100%;
+  max-height:390px;
+  max-width:180px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.heading
+{
+    max-width:170px;
+}
+
+.list-title {
+  margin: 0;
+  padding: 5px 5px;
+  max-width:170px;
+  font-weight: bold;
+  word-wrap: break-word;
+}
+
+.cards {
+  padding: 0.6rem;
+}
+
+.list-card {
+  background: #FFFFFF;
+  border-radius: 3px;
+  padding: 6px 6px 2px 8px;
+  margin-bottom: 0.1rem;
+}
+
+.list-card p {
+  font-size: 0.85rem;
+  margin-bottom: 0.2rem;
+  word-wrap:break-word;
+}
+
+.badge.is-complete {
+  background-color: #61bd4f;
+  color: #fff;
+  border-radius: 3px;
+  padding: 0.3rem 0.5rem;;
+  font-size: 0.7rem;
+  display: inline-block;
+}
+
+
+
+#Bstartbucket
+{
+    width:910px;
+    height: auto;
+    border: 5px solid #000000;
+}
+
+.startbucket
+{
+    width:33%;
+    height:100%;
+    min-height:100px;
+    border: 2px solid #000000;
+}
+
+.startbucketcell
+{
+    width:auto;
+    height:50px;
+    min-height:20px;
+}
+
+td
+{
+        border: 5px solid #000000;
+}
+
+/*
+Styles for dayplan.html
+*/
+
+.window
+{
+    width:100%;
+    height:100%;
+    min-width:1100px;
+    min-height: 800px;
+    border: 2px solid #000000;
+    background:gray;
+}
+
+#tablebox
+{
+    background-color:#ff0000;
+    width:100%;
+    height:60%;
+    min-height:600px;
+}
+
+#formbox
+{
+    background:#00ff00;
+    width:50%;
+    height:40%;
+    min-height:200px;
+    float:left;
+}
+
+#cardshelf
+{
+    background:#0000ff;
+    width:50%;
+    height:40%;
+    min-height:200px;
+    float: right;
+}
+
+#Bstartbucket1
+{
+    width:100%;
+    height: auto;
+}
+
+#autodiv
+{
+    width:200px;
+    height: auto;
+    min-height:100px;
+    background:white;
+}
+
+#gentable
+{
+    min-height:400px;
+    height:100%;
+    min-width:600px;
+    background:#aaaaaa;
+    float: left;
+    padding: 5px;
+}
+
+#buttExp
+{
+    position:fixed;
+    right:00px;
+}
+
+#toprint
+{
+    height:auto;
+    background:#000000;
+    width:max-content;
+}
