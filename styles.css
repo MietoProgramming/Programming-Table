@@ -7,18 +7,7 @@ table
 {
     border-collapse:collapse;
 }
-/*
-Styles to index.html
-*/
 
-/*.container {
-  display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-  font-family: 'Titillium Web', sans-serif;
-  border: 5px solid #00ff00;
-}*/
 .container
 {
     margin-right:0px;
@@ -47,6 +36,7 @@ p {
   max-width:180px;
   border-radius: 3px;
   cursor: pointer;
+  border: 1px solid #000000;
 }
 
 .heading
@@ -94,7 +84,6 @@ p {
 {
     width:910px;
     height: auto;
-    border: 5px solid #000000;
 }
 
 .startbucket
@@ -102,7 +91,6 @@ p {
     width:33%;
     height:100%;
     min-height:100px;
-    border: 2px solid #000000;
 }
 
 .startbucketcell
@@ -112,49 +100,106 @@ p {
     min-height:20px;
 }
 
-td
+#tablebox td
 {
-        border: 5px solid #000000;
+        border: 1px solid #000000;
 }
-
-/*
-Styles for dayplan.html
-*/
 
 .window
 {
     width:100%;
-    height:100%;
-    min-width:1100px;
-    min-height: 800px;
+    height:100vh;
     border: 2px solid #000000;
-    background:gray;
-}
+    background: rgb(115,228,255);
+    background: linear-gradient(90deg, rgba(115,228,255,1) 0%, rgba(9,121,73,1) 49%, rgba(128,0,255,1) 100%);
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 2fr 1fr;
+    padding-bottom: 20px;
+    padding-top: 10px;
+  }
 
 #tablebox
 {
-    background-color:#ff0000;
-    width:100%;
-    height:60%;
-    min-height:600px;
+  width: 100%;
+    height:100%;
+    grid-column: 2/4;
+    margin: auto;
+    padding-bottom: 15px;
+    max-height: 800px;
 }
 
 #formbox
 {
-    background:#00ff00;
-    width:50%;
-    height:40%;
+    width:100%;
+    height:100%;
     min-height:200px;
     float:left;
+    grid-row: 2;
+    grid-column: 1/3;
+    width: 100%;
+    display: grid;
+    grid-column: 1fr 1fr;
+    grid-row: 1fr 1fr 1fr;
+}
+
+#formbox input, #formbox button{
+  grid-column: 2;
+} 
+
+#formbox input[type=button], #formbox select, #formbox .menuText, #buttExp, #formbox input{
+  border-radius: 50px;
+  border-color: transparent;
+  box-shadow: 0 12px 26px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background: linear-gradient(90deg, rgb(177, 247, 169) -5%,  rgba(115,228,255,1) 105%);
+  padding: 15px;
+} 
+
+#formbox input{
+  border-radius: 30px;
+  margin-left:10px ;
+}
+
+#formbox .menuText{
+  margin:auto;
+  padding: 15px;
+}
+
+#formbox select{
+  margin: 10px;
+} 
+
+#databox{
+  text-align: center;
+  grid-column: 1;
+  grid-row: 1/3;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+}
+
+#databox input{
+  width:70%;
+  height: auto;
+  margin: 5px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background: linear-gradient(90deg, rgb(177, 247, 169) -5%,  rgba(115,228,255,1) 105%);
+  border: 0px;
+}
+
+#InButt{
+  margin: auto;
+  margin-left: 10px;
+  width: 60%;
 }
 
 #cardshelf
 {
-    background:#0000ff;
+  grid-row: 2;
     width:50%;
     height:40%;
     min-height:200px;
     float: right;
+    grid-column: 3/5;
 }
 
 #Bstartbucket1
@@ -174,17 +219,26 @@ Styles for dayplan.html
 #gentable
 {
     min-height:400px;
-    height:100%;
-    min-width:600px;
-    background:#aaaaaa;
-    float: left;
+    max-height: 800px;
+    height:auto;
+    min-width:800px;
     padding: 5px;
+    font-weight: 2;
+    border-color: transparent;
+    box-shadow: 0 12px 26px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background: linear-gradient(90deg, rgba(177, 247, 169,0.7) 0%,  rgba(115,228,255,0.7) 100%);
+    padding: 15px;
+    border-radius: 10px;
 }
 
 #buttExp
 {
     position:fixed;
-    right:00px;
+    top:20px;
+    right:0px;
+    border-radius: 0px;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
 }
 
 #toprint
@@ -192,4 +246,13 @@ Styles for dayplan.html
     height:auto;
     background:#000000;
     width:max-content;
+}
+
+.DayTabCell {
+  font-weight: bold;
+  color: #000000;
+
+}
+#plantabgen{
+  width: 100%;
 }

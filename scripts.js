@@ -63,7 +63,10 @@ function addcard()
     }
     else
     {
-        alert("Something wrong! Try again.");
+        for(var i = 0; i < tds.length; i++)
+        {
+            tds[i].style.backgroundColor = "transparent";
+        }
     }
 
     NbBucket += 1;
@@ -111,17 +114,16 @@ function changeForm()
     var state = document.getElementById("selectmode").value;
     if (state == "manual")
     {
-        document.getElementById("databox").innerHTML = 'Name: <input type="text" id="InName" name="inname" maxlength="50"> Time: <input type="number" id="InTime" name="intime" min="1" max="960">Category: <input type="text" id="InCategory" name="incategory" maxlength="50"><select id="selectstyle" onchange="ChangeStyle()><option value="black-white">Black-White</option><option value="blue-white">Blue-White</option><option value="green">Green</option></select><div><input type="button" id="InButt" value="Add" onclick="addcard()"></div>';
-    }
-    else if (state == "automatic")
-    {
-        NbAutTaks = 1;
-        document.getElementById("databox").innerHTML = 'Time: <input type="number" id="InTime" name="intime">Min Time: <input type="number" id="InMinTime" name="inmintime">Max Time: <input type="number" id="InMaxTime" name="inmaxtime"><div><input type="button" id="InButt" value="Add" onclick="addtask()"></div><div id="autodiv"><h1>TASKS:</h1></div><form method="POST" action="Django part"><input type="button" id="InGenTab" value="Generate" onclick="sendtogenerate"></form>';
-    }
-    else
-    {
-        alert("What's wrong! Check your choice and try again.");
-    }
+        document.getElementById("formbox").innerHTML = '<div id="databox"><div class="menuText">Name:</div> <input type="text" id="InName" name="inname" maxlength="50"><div class="menuText">Time:</div> <input type="number" id="InTime" name="intime" min="1" max="960"><div class="menuText">Category: </div><input type="text" id="InCategory" name="incategory" maxlength="50"></div><div><select id="selectmode" onchange="changeForm()"><option value="manual">Manual</option><option value="automatic">Automatic</option></select><select id="selectstyle" onchange="ChangeStyle()"><option value="black-white">Black-White</option><option value="blue">Blue</option><option value="green">Green</option><option value="transparent">Transparent</option></select></div><input type="button" id="InButt" value="Add" onclick="addcard()">';}
+    // else if (state == "automatic")
+    // {
+    //     NbAutTaks = 1;
+    //     document.getElementById("databox").innerHTML = 'Time: <input type="number" id="InTime" name="intime">Min Time: <input type="number" id="InMinTime" name="inmintime">Max Time: <input type="number" id="InMaxTime" name="inmaxtime"><div><input type="button" id="InButt" value="Add" onclick="addtask()"></div><div id="autodiv"><h1>TASKS:</h1></div><form method="POST" action="Django part"><input type="button" id="InGenTab" value="Generate" onclick="sendtogenerate"></form>';
+    // }
+    // else
+    // {
+    //     alert("What's wrong! Check your choice and try again.");
+    // }
 }
 
 function Print()
@@ -142,6 +144,18 @@ function ChangeStyle()
     var style = document.getElementById("selectstyle").value
     switch(style)
     {
+        case "transparent":
+             for(var r = 0; r <= row; r++)
+        {
+            for(var c = 0; c < col; c++)
+            {
+            document.getElementById("plantabgen").rows[r].cells[c].style.backgroundColor = "transparent" ;
+            document.getElementById("plantabgen").rows[r].cells[c].style.color = "black" ;
+            document.getElementById("plantabgen").rows[r].cells[c].style.borderColor = "black" ;
+            }
+        }
+    break;
+
     case "black-white":
              for(var r = 0; r <= row; r++)
         {
@@ -314,7 +328,7 @@ function TabCreate()
         }
         text += "</table></div><input type='button' id='buttExp' value='Print your schedule!' onclick='Print()'>";
 
-        var form = '<div id="databox">Name: <input type="text" id="InName" name="inname" maxlength="50">Time: <input type="number" id="InTime" name="intime" min="1" max="960">Category: <input type="text" id="InCategory" name="incategory" maxlength="50"><select id="selectstyle" onchange="ChangeStyle()"><option value="black-white">Black-White</option><option value="blue">Blue</option><option value="green">Green</option></select></div><div><select id="selectmode" onchange="changeForm()"><option value="manual">Manual</option><option value="automatic">Automatic</option></select></div><input type="button" id="InButt" value="Add" onclick="addcard()">';
+        var form = '<div id="databox"><div class="menuText">Name:</div> <input type="text" id="InName" name="inname" maxlength="50"><div class="menuText">Time:</div> <input type="number" id="InTime" name="intime" min="1" max="960"><div class="menuText">Category: </div><input type="text" id="InCategory" name="incategory" maxlength="50"></div><div><select id="selectmode" onchange="changeForm()"><option value="manual">Manual</option><option value="automatic">Automatic</option></select><select id="selectstyle" onchange="ChangeStyle()"><option value="black-white">Black-White</option><option value="blue">Blue</option><option value="green">Green</option><option value="transparent">Transparent</option></select></div><input type="button" id="InButt" value="Add" onclick="addcard()">';
 
         document.getElementById("tablebox").innerHTML = text;
         document.getElementById("formbox").innerHTML = form;
